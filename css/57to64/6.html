@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Elero assignment" />
+    <meta name="keyword" content="HTML, CSS, JavaScript, Elzero" />
+    <meta name="author" content="xiyini" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>57~64/6</title>
+    <style>
+      body {
+        background-color: #eee;
+        font-family: arial;
+        text-transform: capitalize;
+      }
+
+      section {
+        margin: 20px 20px;
+        padding: 20px;
+        display: grid;
+        gap: 10px 10px;
+        grid-template-areas:
+          "osama osama ahmed shady"
+          "mohammed mahmoud mahmoud shady"
+          "mohammed ezz ezz shady"
+          "mohammed2 ibrahim gamal eman";
+        grid-template-rows: 1fr 2fr auto;
+      }
+
+      div {
+        border-bottom: red solid 2px;
+        position: relative;
+        padding: 10px;
+      }
+
+      div:before {
+        content: "\0022";
+        color: gray;
+        font-size: 50px;
+        font-style: oblique;
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+      }
+
+      .osama,
+      .ahmed,
+      .mohammed,
+      .ezz,
+      .mohammed2,
+      .gamal,
+      .eman {
+        background-color: white;
+      }
+
+      .osama dd,
+      .ahmed dd,
+      .mohammed dd,
+      .ezz dd,
+      .mohammed2 dd,
+      .gamal dd,
+      .eman dd {
+        color: gray;
+        margin: 0px;
+      }
+
+      .shady,
+      .mahmoud,
+      .ibrahim {
+        color: gray;
+        background-color: black;
+      }
+
+      .shady > dd,
+      .mahmoud > dd,
+      .ibrahim > dd {
+        margin: 0px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .osama {
+        grid-area: osama;
+      }
+
+      .ahmed {
+        grid-area: ahmed;
+      }
+
+      .shady {
+        grid-area: shady;
+      }
+
+      .mohammed {
+        grid-area: mohammed;
+      }
+
+      .mahmoud {
+        grid-area: mahmoud;
+      }
+
+      .ezz {
+        grid-area: ezz;
+      }
+
+      .mohammed2 {
+        grid-area: mohammed2;
+      }
+
+      .ibrahim {
+        grid-area: ibrahim;
+      }
+
+      .gamal {
+        grid-area: gamal;
+      }
+
+      .eman {
+        grid-area: eman;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="osama">
+        <h2>osama mohammed</h2>
+        <dd>full-stack developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum sed
+          repellendus commodi accusamus dolorem tempora odit, enim reprehenderit
+          in dolorum dignissimos alias non deserunt voluptas animi, iure,
+          debitis quasi suscipit?
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+          dolorem explicabo ad! Incidunt soluta voluptatum dicta non nesciunt
+          earum, similique quod eveniet odit reprehenderit obcaecati, natus a
+          ducimus? Aliquid, aspernatur.
+        </p>
+      </div>
+      <div class="ahmed">
+        <h2>ahmed sayed</h2>
+        <dd>IOS developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dicta
+          natus accusamus debitis reprehenderit quaerat, odio voluptates
+          tempora, alias quidem ut reiciendis autem culpa ullam quisquam eos
+          distinctio quia illum.
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+          praesentium obcaecati odio temporibus sapiente officiis, est unde
+          consequatur aliquam placeat corporis laboriosam, autem suscipit,
+          expedita corrupti totam eius omnis qui.
+        </p>
+      </div>
+      <div class="shady">
+        <h2>shady nabil</h2>
+        <dd>full-stack developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+          doloribus exercitationem molestiae, dolores ipsum aliquam animi
+          praesentium unde temporibus aspernatur itaque. Tempore, error? Sint
+          blanditiis repudiandae nisi autem dicta sequi.
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+          exercitationem. Cumque doloremque sequi cupiditate facilis nostrum
+          unde non accusantium officiis ipsam eius labore optio quas quo fuga
+          error, ad ipsa.
+        </p>
+      </div>
+      <div class="mohammed">
+        <h2>mohammed ibrahim</h2>
+        <dd>.NET developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sunt
+          adipisci, sit eius accusamus consequuntur earum error vitae aspernatur
+          porro eveniet a provident minus officiis ducimus, ad facere. Nemo,
+          quae.
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quasi
+          facere? Magnam voluptatem asperiores nemo omnis ad excepturi
+          voluptatibus perferendis odit mollitia quo laudantium, molestiae autem
+          commodi perspiciatis. Eius, facere!
+        </p>
+      </div>
+      <div class="mahmoud">
+        <h2>mahmoud mohammed</h2>
+        <dd>full-stack developer</dd>
+        <h3>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est ducimus
+          omnis, amet, eos fugiat consectetur repudiandae ipsa ipsam excepturi
+          beatae nihil facere voluptatem eum, praesentium animi hic?
+          Perspiciatis, eos facere?
+        </h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim
+          voluptatibus labore magnam necessitatibus quae a eos, mollitia
+          suscipit. Ut velit reiciendis dicta repellendus fuga quo impedit natus
+          tempore cum facere.
+        </p>
+      </div>
+      <div class="ezz">
+        <h2>ezz eldin</h2>
+        <dd>front-end developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia,
+          molestiae dicta! Unde maiores, quae est iste repellendus nostrum sint
+          quam doloribus consequuntur quo corrupti deserunt ducimus illum
+          quisquam necessitatibus et?
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+          accusamus quidem nemo. Nisi neque ea a consequuntur odit doloremque
+          modi atque vero quo asperiores, repudiandae aliquam consectetur.
+          Deserunt, facilis reprehenderit?
+        </p>
+      </div>
+      <div class="mohammed2">
+        <h2>mohammed sayed</h2>
+        <dd>IOS developer</dd>
+        <h3>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+          corrupti fugit fuga voluptate, nobis magnam sunt tempore ut, iure
+          deserunt ea hic corporis necessitatibus sed, excepturi molestias!
+          Impedit, harum eos.
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum iure
+          ipsum, natus quia accusamus, magni officia consectetur nulla
+          doloremque vitae quisquam consequuntur quo officiis atque! Repellendus
+          harum veritatis porro repudiandae?
+        </p>
+      </div>
+      <div class="ibrahim">
+        <h2>Ibrahim sayed</h2>
+        <dd>IOS developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita esse
+          obcaecati quos necessitatibus rem, illo distinctio in soluta corporis
+          fugit laboriosam dolorem nihil vitae velit. Assumenda delectus
+          perferendis voluptas sapiente!
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea fuga
+          soluta rerum voluptates repellat enim, atque expedita deleniti itaque.
+          Molestiae impedit accusamus rem incidunt tempore totam necessitatibus
+          omnis praesentium ratione.
+        </p>
+      </div>
+      <div class="gamal">
+        <h2>gamal sayed</h2>
+        <dd>IOS developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos esse
+          possimus quod! Consequuntur quos deleniti sit eveniet reiciendis
+          soluta pariatur voluptates, voluptatem libero reprehenderit dolore
+          officiis. Quasi maiores nesciunt vitae!
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
+          incidunt unde totam veniam molestiae voluptas nostrum quae corporis
+          ratione placeat officiis perferendis cum dolorem, cumque fugit quam
+          enim illo sed!
+        </p>
+      </div>
+      <div class="eman">
+        <h2>eman syaed</h2>
+        <dd>IOS developer</dd>
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+          provident ducimus dolorem id accusamus veniam minima nam vero a! Nulla
+          hic perspiciatis voluptatum quidem voluptates dolores. Optio labore ut
+          exercitationem.
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut soluta
+          voluptate quaerat commodi? Et ullam minima exercitationem nesciunt hic
+          explicabo, rem harum possimus delectus laudantium accusamus, veniam
+          libero maxime dolore!
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

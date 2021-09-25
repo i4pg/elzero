@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Elero assignment" />
+    <meta name="keyword" content="HTML, CSS, JavaScript, Elzero" />
+    <meta name="author" content="xiyini" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>57~64/2</title>
+    <style>
+      div {
+        font-family: arial;
+        display: grid;
+        grid-template-rows: 10vh 80vh 10vh;
+        grid-template-areas:
+          "header header header header header header header header header header"
+          "section section section section section section section aside aside aside"
+          "footer footer footer footer footer footer footer footer footer footer";
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .layout > header {
+        background-color: lightblue;
+        grid-area: header;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .layout > header::before {
+        content: "Header";
+        color: white;
+      }
+
+      .layout > section {
+        background-color: orange;
+        grid-area: section;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .layout > section::before {
+        content: "Section";
+        color: white;
+        align-self: flex-start;
+      }
+
+      .layout > aside {
+        background-color: gray;
+        grid-area: aside;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .layout > aside::before {
+        content: "Aside";
+        color: white;
+        align-self: flex-start;
+      }
+
+      .layout > footer {
+        grid-area: footer;
+        background-color: mediumseagreen;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .layout > footer::before {
+        content: "Footer";
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="layout">
+      <header></header>
+      <section></section>
+      <aside></aside>
+      <footer></footer>
+    </div>
+  </body>
+</html>
