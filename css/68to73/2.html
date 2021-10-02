@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Elero assignment" />
+    <meta name="keyword" content="HTML, CSS, JavaScript, Elzero" />
+    <meta name="author" content="xiyini" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>68~73/2</title>
+    <style>
+
+h1 {
+	--c: darkcyan;
+	width: 150px;
+	padding: 10px;
+	margin: 200px auto;
+	font-size: 42px;
+	color: white;
+	background-color: var(--c);
+	position: relative;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+h1::before {
+	content: "";
+	position: absolute;
+	background-color: var(--c);
+	width: 15%;
+	height: 100%;
+	transform-origin: bottom;
+	transform: skew(15deg);
+}
+
+h1::after {
+	content: "";
+	position: absolute;
+	background-color: var(--c);
+	width: 10%;
+	height: 100%;
+	left: -23px;
+	transform-origin: bottom;
+	transform: skew(15deg);
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Elzero</h1>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Elero assignment">
+    <meta name="keyword" content="HTML, CSS, JavaScript, Elzero">
+    <meta name="author" content="xiyini">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>74~77/1</title>
+    <style>
+
+div {
+	width: 50px;
+	height: 50px;
+	margin: 50% auto;
+	border: solid 5px;
+	border-radius: 50%;
+	border-color: crimson crimson crimson transparent;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: rotate 1s linear 0s infinite normal;
+}
+
+div:hover {
+	animation-play-state: paused;
+}
+
+div::before {
+	content: "";
+	width: 130%;
+	height: 130%;
+	position: absolute;
+	border: 5px solid;
+	border-color: dodgerblue transparent dodgerblue dodgerblue;
+	border-radius: 50%;
+}
+
+div::after {
+	content: "";
+	width: 160%;
+	height: 160%;
+	position: absolute;
+	border: 5px solid;
+	border-color: transparent goldenrod goldenrod goldenrod;
+	border-radius: 50%;
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

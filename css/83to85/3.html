@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Elero assignment">
+    <meta name="keyword" content="HTML, CSS, JavaScript, Elzero">
+    <meta name="author" content="xiyini">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>83~85/3</title>
+    <style>
+
+* {
+	margin: 0;
+	font-family: arial;
+	text-transform: capitalize;
+}
+
+section {
+	margin: 20px auto;
+
+}
+
+h2 {
+	font-size: 20px;
+	margin: 5px;
+}
+div {
+	padding: 20px;
+	text-align: center;
+	background-color: #EEE;
+	border: 1px darkgray solid;
+}
+
+@media (min-width: 1200px) {
+	h2 {
+		color: seagreen;
+	}
+	section {
+		margin: 20px;
+		display: grid;
+		gap: 30px;
+		grid-template-areas:
+			"one one"
+			"two three"
+			"four four";
+	}
+
+	.one {
+		grid-area: one;
+	}
+
+	.two {
+		grid-area: two;
+	}
+	.three {
+		grid-area: three;
+	}
+
+	.four {
+		grid-area: four;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	h2 {
+		color: crimson;
+	}
+	section {
+		margin: 20px;
+		display: grid;
+		gap: 30px;
+		grid-template-areas:
+			"one one one"
+			"two three four";
+	}
+	.one {
+		grid-area: one;
+	}
+
+	.two {
+		grid-area: two;
+	}
+	.three {
+		grid-area: three;
+	}
+
+	.four {
+		grid-area: four;
+	}
+}
+
+@media (max-width: 991px) {
+	section {
+		margin: 20px;
+		display: grid;
+		gap: 30px;
+	}
+}
+
+
+    </style>
+</head>
+<body>
+
+	<section>
+		<div class="one">
+			<h2>product one</h2>
+			<p>this is product</p>
+		</div>
+				<div class="two">
+			<h2>product two</h2>
+			<p>this is product</p>
+		</div>
+				<div class="three">
+			<h2>product three</h2>
+			<p>this is product</p>
+		</div>
+				<div class="four">
+			<h2>product four</h2>
+			<p>this is product</p>
+		</div>
+	</section>
+
+</body>
+</html>
