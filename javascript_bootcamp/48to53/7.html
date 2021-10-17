@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>47~53/7</title>
+    <script>
+      let start = 0;
+      let mix = [1, 2, 3, "A", "B", "C", 4];
+      for (i = ++start; i < mix.length; i++) {
+        if (typeof mix[i] === "string") {
+          continue;
+        }
+        console.log(mix[i]);
+      }
+      // Output
+      2;
+      3;
+      4;
+    </script>
+    <style></style>
+  </head>
+  <body></body>
+</html>

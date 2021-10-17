@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>40~49/6</title>
+    <script>
+      let arr1 = ["A", "C", "X"];
+      let arr2 = ["D", "E", "F", "Y"];
+      let allArrs = [];
+
+      // Your Code Here
+      allArrs = allArrs
+        .concat(arr1.pop(), arr2.slice(arr1.length))
+        .sort()
+        .join("")
+        .toLowerCase();
+      console.log(allArrs); // fxy
+    </script>
+    <style></style>
+  </head>
+  <body></body>
+</html>

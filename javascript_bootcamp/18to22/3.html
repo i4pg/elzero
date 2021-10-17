@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18~22/3</title>
+    <script>
+      let num = "10";
+
+      // Solution One
+      console.log(+num + +num); // 20
+
+      // Solution Two
+      console.log(num-- + ++num); // 20
+
+      // Solution Three
+      console.log(num++ + --num); // 20
+
+      // Solution Four
+      console.log(num++ + --num - num-- + ++num); // 20
+
+      // Solution Five
+      console.log(num-- + ++num - num++ + --num); // 20
+    </script>
+    <style></style>
+  </head>
+  <body></body>
+</html>

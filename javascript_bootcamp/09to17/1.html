@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09~17</title>
+    <script>
+      // Add Variables Here
+      let numberOne = 10;
+      let numberTwo = 20;
+      // Ouput
+      console.log(numberOne + "" + numberTwo); // Normal Concatenate => 1020
+      console.log(typeof 'numberOne + "" + numberTwo'); // Normal Concatenate => String
+      console.log(`${numberOne}${numberTwo}`); // Template Literals Way => 1020
+      console.log(typeof `${numberOne}${numberTwo}`); // Template Literals Way => String
+
+      console.log(numberTwo + "\n" + numberOne);
+      /*
+        Normal Concatenate
+        20
+        10
+      */
+
+      console.log(`${numberTwo}
+${numberOne}`);
+      /*
+        Template Literals Way
+        20
+        10
+      */
+    </script>
+    <style></style>
+  </head>
+  <body></body>
+</html>
