@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" name="elements" class="input" placeholder="Number Of Elements" />
+        <input type="text" name="texts" class="input" placeholder="Elements Text" />
+        <select name="type" class="input">
+            <option value="Div">Div</option>
+            <option value="Section">Section</option>
+        </select>
+        <input type="submit" name="create" value="Create" />
+        <div class="results"></div>
+    </form>
+</body>
+<script>
+    // select and decleare the variables we want to work with
+    let inputNum = document.querySelector("[name='elements']");
+    let inputText = document.querySelector("[name='texts']");
+    let inputType = document.querySelector("[name='type']");
+    let submit = document.querySelector("[type='submit']");
+    let resultDiv = document.querySelector("[class='results']");
+
+    submit.onclick = function (e) {
+        // set a function that's start on event (onclick).
+        e.preventDefault(); // to prevent sending the from eacth time the button being clicked
+
+        resultDiv.innerHTML = ""; // (innerHTML) replace all the content inside our resultDiv, So each time we click submit first
+        // thing first apply this as ("") to be an empty element
+
+        for (i = 1; i <= inputNum.value; i++) {
+            // write a loop that's its length equal to user input value (inputNum.value).
+            // ( i = 1 ) So we can insert the index number to the ID attribute.
+
+            if (inputType.value === "Div") {
+                // first if condition for the first option which is "Div", if its selected do the bellow method
+                divBox = document.createElement("div"); // 1. create a div
+                divBox.className = "Box"; // 2. set a class to it
+                divBox.setAttribute("title", "Element"); // 3. setting title attribute
+                divBox.setAttribute("id", `id-${i}`); // 4. setting id attribute + add the (i) value so its +1 every loop,
+                // note thats we decleare i to start from 1
+                resultDiv.appendChild(divBox); // now we can append our divBox to the result div
+                divBox.innerHTML = inputText.value; // here we use (innerHTML) to insert user input text or replace it if there's an old content to the Box
+
+                // styling
+                divBox.style.cssText = `
+                padding: 10px;
+                width: 100%;
+                background-color: #DD4124;
+                color: white;
+                font-family: arial;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                font-size: 17px;
+                display: flex;
+                justify-content: center;
+                `;
+
+                // second if condition for section Box, applying the same terms we used in div Box
+            } else if (inputType.value === "Section") {
+                sectionBox = document.createElement("section");
+                sectionBox.className = "Section";
+                sectionBox.setAttribute("title", "Element");
+                sectionBox.setAttribute("id", `id-${i}`);
+                resultDiv.appendChild(sectionBox);
+                sectionBox.innerHTML = inputText.value;
+                // styling
+                sectionBox.style.cssText = `
+                padding: 10px;
+                width: 100%;
+                background-color: #DD4124;
+                color: white;
+                font-family: arial;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                font-size: 17px;
+                display: flex;
+                justify-content: center;
+                `;
+            }
+        }
+    };
+
+    // styling
+    document.body.style.cssText = `
+        border-sizing: border-box;
+        margin: 0;
+    `;
+
+    document.querySelector("[action='']").style.cssText = `
+        width: 100%;
+        margin: 20px auto;
+    `;
+
+    inputNum.style.cssText = `
+        display: block;
+        padding: 10px;
+        width: 300px;
+        margin: 10px auto;
+        font-family: arial;
+        border-radius: 5px;
+        background-color: #f7f7f7;
+        font-size: 17px;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+    `;
+
+    inputText.style.cssText = `
+        display: block;
+        padding: 10px;
+        width: 300px;
+        margin: 10px auto;
+        font-family: arial;
+        border-radius: 5px;
+        background-color: #f7f7f7;
+        font-size: 17px;
+    `;
+
+    inputType.style.cssText = `
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 326px;
+        font-family: arial;
+        border-radius: 5px;
+        background-color: #f7f7f7;
+        font-size: 17px;
+    `;
+
+    submit.style.cssText = `
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 326px;
+        background-color: #009B77;
+        color: white;
+        font-family: arial;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        font-size: 17px;
+    `;
+
+    resultDiv.style.cssText = `
+        margin: 20px auto;
+        padding: 10px;
+        display: grid;
+        gap: 20px 50px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    `;
+</script>
+
+</html>

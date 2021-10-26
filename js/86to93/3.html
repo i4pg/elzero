@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+</body>
+<script>
+    // Creates New HTML elements
+    let frm = document.createElement("form");
+    let inp = document.createElement("input");
+    let res = document.createElement("div");
+    // setting elemens's attributes
+    frm.setAttribute("action", "");
+    inp.setAttribute("type", "number");
+    inp.setAttribute("name", "dollar");
+    inp.setAttribute("placeholder", "USD Dollar");
+
+    // for result messege:
+    // 1. create variable thats contain the default text (createTextNode).
+    // 2. invoke this node by using (appendChild) function.
+    let node = document.createTextNode("{0} USD Dollar = {0} Egyptian Pound");
+    res.appendChild(node);
+
+    // for calculation method:
+    // 1. set an anonymous function that's run on a specific event (oninput) "(onchange) seems not work well".
+    // 2. create a variable thats contain the math method we want to apply.
+    // => $1 = 5.16 Egyptian Pound
+    // 3. multiply the value of user input which is (inp.value) by 5.16.
+    // 4. return the result with text, by applying (toFixed(2)) we can get two numbers after qomma.
+    // => each time the user update the value the function will run again <= (event.oninput).
+    inp.oninput = function () {
+        us = inp.value * 5.16
+        return res.innerHTML = `{${inp.value}} USD Dollar = {${(us).toFixed(2)}} Egyptian Pound`;
+    }
+
+    res.className = "result"; // set a result class
+
+    // append the input and the result insid the form
+    frm.appendChild(inp);
+    frm.appendChild(res);
+
+    // append form into the body
+    document.body.appendChild(frm);
+
+    // Styling
+    inp.style.cssText = `
+    margin: 10px auto;
+    outline: none;
+    `;
+
+    res.style.cssText = `
+    margin: 10px auto;
+    font-family: arial;
+    `;
+</script>
+
+</html>
