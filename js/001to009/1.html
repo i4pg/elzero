@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Learn JavaScript</title>
-    <script>
-      // Code One
-      document.getElementById("el").style.color = "red";
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Learn JavaScript</title>
+  <script>
+    // Code One
+    document.getElementById("el").style.color = "red";
 	/*
-	   This code basically won't work for a couple reasons:
-	   	1. translate proceccoring start from top to bottom, So the js code here will be excuted before even the html page will fully load. So there is no element that's called "el" to apply the funcation to.
-	   	2. There's no Event to decied when the code lode, Ex. code 2 (windows.onload).
-	   */
-    </script>
-    <script>
-      // Code Two
-      window.onload = function () {
-        document.getElementById("el").style.color = "red";
-      };
-    </script>
-  </head>
-  <body>
-    <h1 id="el">Page Title</h1>
-    <script>
-      // Code Three
+       This code basically won't work for a couple reasons:
+          1. translate proceccoring start from top to bottom, So the js code here will be excuted before even the html page will fully load. So there is no element that's called "el" to apply the funcation to.
+          2. There's no Event to decied when the code lode, Ex. code 2 (windows.onload).
+       */
+  </script>
+  <script>
+    // Code Two
+    window.onload = function () {
       document.getElementById("el").style.color = "red";
-    </script>
-  </body>
+    };
+  </script>
+</head>
+
+<body>
+  <h1 id="el">Page Title</h1>
+  <script>
+    // Code Three
+    document.getElementById("el").style.color = "red";
+  </script>
+</body>
+
 </html>
