@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .assign {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .assign input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+        }
+
+        .assign input:focus {
+            outline: none;
+            border-color: #ccc;
+        }
+
+        .assign [title="Current"] {
+            padding: 20px;
+            margin: 10px auto;
+            width: 610px;
+            background-color: #f1f0f0;
+        }
+
+        .assign .classes-list {
+            padding: 20px;
+            margin: 10px auto;
+            width: 610px;
+            background-color: #f1f0f0;
+        }
+
+        .assign .classes-list h5 {
+            margin: 0 0 10px;
+            text-align: left;
+        }
+
+        .assign .classes-list div span {
+            background-color: #ff5722;
+            padding: 6px 10px 8px;
+            margin-right: 5px;
+            border-radius: 6px;
+            color: white;
+            display: inline-flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="assign">
+        <input type="text" class="classes-to-add" placeholder="Add Classes" />
+        <input type="text" class="classes-to-remove" placeholder="Remove Classes" />
+        <div class="element current" title="Current">Current Element</div>
+        <div class="classes-list">
+            <h5>Current Element Class Lists</h5>
+            <div></div>
+        </div>
+    </div>
+</body>
+<script>
+    // First let's decleare All the elements we need to work with So every thing can be smoothly
+
+    let addClassInput = document.getElementsByClassName("classes-to-add")[0];
+
+    let removeClassInput =
+        document.getElementsByClassName("classes-to-remove")[0];
+    let current = document.getElementsByClassName("element current")[0];
+
+    let classLists =
+        document.getElementsByClassName("classes-list")[0].children[1];
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
+
+    // I guess there's a hundreds ways you do by using function, anonymous fonction and some high order functions
+    // I'll keep it simple, Since I'm a beginner like you too.
+
+    function addClass() { // First fn. thats auto add user input to element's classes
+        if (addClassInput.value !== "") { // 1. Here we have to make sure the fn. won't work if there's no input To don't get any Error
+            // 2. OK, as you see here looping through each input (after split it so we can get multi input, and lowercase for sure).
+            // and add it's value to element's class
+            for (i = 0; i < addClassInput.value.split(" ").length; i++) {
+                current.classList.add(
+                    addClassInput.value.split(" ")[i].toLowerCase()
+                );
+            }
+            addClassInput.value = addClassInput.defaultValue; // 3. Return input to its defualt placeholder
+        }
+    }
+
+    function removeClass() { // second fn. To Basically remove user input from classes
+        if (removeClassInput.value !== "") { // 1. be sure it's not empty
+            for (i = 0; i < removeClassInput.value.split(" ").length; i++) { // 2. same as the add loop
+                current.classList.remove(
+                    removeClassInput.value.split(" ")[i].toLowerCase()
+                );
+            }
+        } // note that we dont return its value to default placeholder Cuz we need to work with later.
+    }
+
+    function classListGen() { // third, Our generetor to show the classes into our page
+        for (i = 0; i < current.classList.length; i++) { // 1. create a new span for each input and add it to parent element
+            classLists.appendChild(document.createElement("span"));
+            classLists.children[i].innerHTML = current.classList.value
+                .split(" ")
+                .sort()[i];
+
+            // it's keep repeating gen spans for each class after first gen, Idk how to deal with it
+            // So simply i write this to remove the empty spans
+            for (j = 0; j < classLists.children.length; j++) {
+                classLists.children[j].textContent === ""
+                    ? classLists.children[j].remove()
+                    : "";
+            }
+        }
+    }
+
+    // Okay, Fourth Fn. which is removing spans input and reset input default placeholder
+    function classListRemover() { 
+        for (i = 0; i < removeClassInput.value.split(" ").length; i++) {
+            for (let j = 0; j < classLists.children.length; j++) {
+                if (classLists.children[j].textContent === removeClassInput.value.split(" ")[i].toLowerCase()) {
+                    classLists.children[j].remove();
+                }
+            }
+        }
+        removeClassInput.value = removeClassInput.defaultValue;
+    }
+
+    // After we write our Fn. and decleared all Variables, Now we can invoke what we want by event listener
+    window.onload = classListGen();
+    addClassInput.addEventListener("blur", addClass);
+    addClassInput.addEventListener("blur", classListGen);
+    removeClassInput.addEventListener("blur", removeClass);
+    removeClassInput.addEventListener("blur", classListRemover);
+</script>
+
+</html>

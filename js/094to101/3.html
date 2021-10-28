@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="our-element">Our Element</div>
+    <p></p>
+</body>
+<script>
+    let rm = document.getElementsByTagName("p")[0];
+    rm.remove();
+
+    let startElement = document.createElement("div");
+    let endElement = document.createElement("div");
+    let element = document.querySelector(".our-element");
+
+    startElement.className = "start";
+    startElement.setAttribute("title", "Start Element");
+    startElement.setAttribute("data-value", "Start");
+    startElement.innerHTML = "Start";
+
+    endElement.className = "end";
+    endElement.setAttribute("title", "End Element");
+    endElement.setAttribute("data-value", "End");
+    endElement.innerHTML =  "End";
+
+    element.before(startElement);
+    element.after(endElement);
+</script>
+</html>
