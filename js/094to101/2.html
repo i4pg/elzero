@@ -85,10 +85,16 @@
     // I guess there's a hundreds ways you do by using function, anonymous fonction and some high order functions
     // I'll keep it simple, Since I'm a beginner like you too.
 
-    function addClass() { // First fn. thats auto add user input to element's classes
-        if (addClassInput.value !== "") { // 1. Here we have to make sure the fn. won't work if there's no input To don't get any Error
+    function addClass() {
+        // First fn. thats auto add user input to element's classes
+        if (addClassInput.value !== "") {
+            // 1. Here we have to make sure the fn. won't work if there's no input To don't get any Error
             // 2. OK, as you see here looping through each input (after split it so we can get multi input, and lowercase for sure).
             // and add it's value to element's class
+            if (classLists.childNodes[0].textContent === "No Classes To Show") {
+                    classLists.childNodes[0].remove();
+                }
+                
             for (i = 0; i < addClassInput.value.split(" ").length; i++) {
                 current.classList.add(
                     addClassInput.value.split(" ")[i].toLowerCase()
@@ -98,9 +104,12 @@
         }
     }
 
-    function removeClass() { // second fn. To Basically remove user input from classes
-        if (removeClassInput.value !== "") { // 1. be sure it's not empty
-            for (i = 0; i < removeClassInput.value.split(" ").length; i++) { // 2. same as the add loop
+    function removeClass() {
+        // second fn. To Basically remove user input from classes
+        if (removeClassInput.value !== "") {
+            // 1. be sure it's not empty
+            for (i = 0; i < removeClassInput.value.split(" ").length; i++) {
+                // 2. same as the add loop
                 current.classList.remove(
                     removeClassInput.value.split(" ")[i].toLowerCase()
                 );
@@ -108,8 +117,10 @@
         } // note that we dont return its value to default placeholder Cuz we need to work with later.
     }
 
-    function classListGen() { // third, Our generetor to show the classes into our page
-        for (i = 0; i < current.classList.length; i++) { // 1. create a new span for each input and add it to parent element
+    function classListGen() {
+        // third, Our generetor to show the classes into our page
+        for (i = 0; i < current.classList.length; i++) {
+            // 1. create a new span for each input and add it to parent element
             classLists.appendChild(document.createElement("span"));
             classLists.children[i].innerHTML = current.classList.value
                 .split(" ")
@@ -126,13 +137,20 @@
     }
 
     // Okay, Fourth Fn. which is removing spans input and reset input default placeholder
-    function classListRemover() { 
+    function classListRemover() {
         for (i = 0; i < removeClassInput.value.split(" ").length; i++) {
             for (let j = 0; j < classLists.children.length; j++) {
-                if (classLists.children[j].textContent === removeClassInput.value.split(" ")[i].toLowerCase()) {
+                if (
+                    classLists.children[j].textContent ===
+                    removeClassInput.value.split(" ")[i].toLowerCase()
+                ) {
                     classLists.children[j].remove();
                 }
             }
+            noText = document.createTextNode("No Classes To Show");
+            classLists.children.length === 0
+                ? classLists.appendChild(noText)
+                : "";
         }
         removeClassInput.value = removeClassInput.defaultValue;
     }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Body
+    document.body.style.cssText = `
+    font-family: Tahoma, Arial;
+    margin: 0;
+    background-color: #EEE;
+    `;
+
+    // Header
+    // Decleare Variables we need to use in our header section
+    let elzeroHeader = document.createElement("header");
+    let logo = document.createElement("div");
+    let nav = document.createElement("nav");
+    let elzeroNode = document.createTextNode("Elzero");
+    let navUl = document.createElement("ul");
+
+    // append logo
+    logo.appendChild(elzeroNode);
+    elzeroHeader.appendChild(logo);
+
+    // You can use .map too but, for loop more customizable
+    // my loop here take the arrays elements and then put into different li element inside ul
+    // css custom also inside this loop
+    let liArray = ["Home", "About", "Service", "Contact"];
+    for (i = 0; i < liArray.length; i++) {
+        li = document.createElement("li");
+        link = document.createElement("a");
+        link.setAttribute('href', '#');
+        li.appendChild(link);
+        text = document.createTextNode(liArray[i]);
+        link.appendChild(text);
+        navUl.insertBefore(li, navUl.childNodes[i]);
+        link.style.cssText = `
+        text-decoration: none;
+        color: #777;
+        `;
+    };
+
+    // append nav 
+    nav.appendChild(navUl);
+    elzeroHeader.appendChild(nav);
+
+    // append header to our page
+    document.body.appendChild(elzeroHeader);
+
+    // Styliiiiiiing
+    elzeroHeader.className = "website-head";
+    logo.className = "logo";
+    nav.className = "menu";
+
+    elzeroHeader.style.cssText = `
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between
+    `;
+    navUl.style.cssText = `
+    width: 300px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    `;
+    logo.style.cssText = `
+    color: rgb(35,169,110);
+    font-weight: bold;
+    font-size: 20px;
+    `;
+
+    // content
+
+    // var and ele and class
+    let ElzeroContent = document.createElement("content");
+    ElzeroContent.className = "content";
+
+    // So we have 15 product to list in our content
+    // i start from 1, So we can call "i" value, in each product's span
+    // less or equal to 15 to list 15 product
+    for (i = 1; i <= 15; i++) {
+        pro = document.createElement("div");
+        pro.className = "product";
+        span = document.createElement("span");
+        span.innerHTML = i;
+        pro.appendChild(span);
+        text = document.createTextNode("Product");
+        pro.appendChild(text);
+        ElzeroContent.appendChild(pro);
+        pro.style.cssText = `
+            background-color: white;
+            text-align:center;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #777;
+        `;
+        span.style.cssText = `
+            display: block;
+            color: black;
+            font-size: 26px;
+            margin-bottom: 5px;
+        `;
+    };
+    // append our content into the page
+    document.body.appendChild(ElzeroContent);
+    // some styling for content and grid for better responsive design
+    ElzeroContent.style.cssText = `
+        margin: 20px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    `;
+
+    // footer
+    // keep it simple!
+    let elzeroFooter = document.createElement("footer");
+    elzeroFooter.className = "footer";
+    let footerText = document.createTextNode("Copyright 2021");
+    elzeroFooter.appendChild(footerText);
+    elzeroFooter.style.cssText = `
+        background-color: rgb(35,169,110);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+    `;
+    document.body.appendChild(elzeroFooter);
+</script>
+
+</html>
