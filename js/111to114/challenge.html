@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .container {
+            margin: 20px auto;
+        }
+
+        .form,
+        .tasksForm {
+            background-color: #EEE;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .input,
+        .task {
+            width: 65%;
+            padding: 10px;
+            border: solid 1px lightgray;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .add,
+        .del {
+            width: 25%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: darkcyan;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .del {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <input type="text" class="input">
+            <input type="submit" class="add" value="Add Task">
+        </div>
+        <div class="tasks"></div>
+    </div>
+</body>
+<script>
+    let taskForm = document.querySelector(".form");
+    let inputTask = document.querySelector(".input");
+    let addTask = document.querySelector(".add");
+    let tasks = document.querySelector(".tasks");
+
+    document.addEventListener("click", (e) => {
+        e.target.className === "del" 
+        ? e.target.parentNode.parentNode.remove() 
+        : "";
+    });
+
+    addTask.onclick = () => {
+        let newTask = document.createElement("div");
+        let task = document.createElement("div");
+        let del = document.createElement("input");
+
+        newTask.className = "tasksForm"
+
+        task.className = "task";
+        task.innerHTML = `${inputTask.value}`;
+
+        del.className = "del";
+        del.setAttribute("value", "Delete");
+        del.setAttribute("type", "submit");
+
+        task.appendChild(del);
+        newTask.appendChild(task);
+        document.body.appendChild(newTask);
+        window.localStorage.setItem("Tasks", `${inputTask.value}`);
+    };
+</script>
+
+</html>
