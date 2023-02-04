@@ -1,64 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>loop challenge</title>
-    <script>
-      let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
-      let myEmployees = [
-        "Amgad",
-        "Samah",
-        "Ameer",
-        "Omar",
-        "Othman",
-        "Amany",
-        "Samia",
-        "Anwar",
-      ];
 
-      let teamCount = 1; // To start list our teams numbers from 1
-      let adminNum = 0; // Firstly, decleare it as zero, then in the end of the main loop we add 1 to it So it can increase everytime the loop excute to choose which admin it's in the nested loop
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-      // to dynamically calculate how many admins we have and break it when reaching "stop".
-      for (adminCount = 0; adminCount < myAdmins.length; adminCount++) {
-        if (myAdmins[adminCount] === "Stop") {
-          break;
-        }
-      }
-      document.write(`<div>We Have ${adminCount} Admins</div>`);
-      document.write(`<hr>`);
-      // to find the team number and its admin
-      for (adminName = 0; adminName < myAdmins.length; adminName++) {
-        if (myAdmins[adminName] === "Stop") {
-          break;
-        }
-        document.write(`<div>`);
-        document.write(
-          `The Admin For Team ${teamCount} Is ${myAdmins[adminName]}`
-        );
-        teamCount++; // otherwise the value will stay 1, it's decleared out of the loop
-        document.write(`<h3>Team Memebers:</h3>`);
-        // To automate team members joining by firt char in their names.  
-        for ( // decleare a variable to look for the employee one by one ( nested loop ).
-          membersCount = 0;
-          membersCount < myEmployees.length;
-          membersCount++
-        ) { // write a condition to arrange each employee by look at their first charcatar name and compare it with its admin.
-          if (myEmployees[membersCount][0] === myAdmins[adminNum][0]) { // here we use "adminNum" which we decleare it out of main loop.
-            document.write(`<p>- ${myEmployees[membersCount]}</p>`);
-          } else { // To ignore employees who doesn't have same charctar as its admin.
-            continue;
-          }
-        }
-        adminNum++; // So each time the mainloop running the value inside a nested loop will increase by one to specify which admin to look into.
-        document.write(`<hr>`);
-        document.write(`</div>`);
-      }
-    </script>
-    <style></style>
-  </head>
+<body>
+</body>
+<script src="main.js"></script>
 
-  <body></body>
 </html>
