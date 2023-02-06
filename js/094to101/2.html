@@ -102,8 +102,11 @@
   }
 
   let appendClass = (klass) => {
-    document.createElement("span").append(text)
-    document.createTextNode(klass).append(span)
+    const span = document.createElement("span")
+    const text = document.createTextNode(klass)
+
+    span.append(text)
+    classContainer.append(span)
   }
 
   let tagManager = (tag, ele) => {
