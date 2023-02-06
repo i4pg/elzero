@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="section">
+      <form action="" class="column is-half is-offset-one-quarter">
+        <div class="field">
+          <div class="control">
+            <input type="number" name="elements" class="input" placeholder="Number Of Elements" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input type="text" name="texts" class="input" placeholder="Elements Text" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <div class="select">
+              <select name="type" class="input">
+                <option value="Div">Div</option>
+                <option value="Section">Section</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="button is-primary is-responsive is-fullwidth" type="submit" name="create" value="Create" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="section results columns is-multiline"></div>
+  </div>
+</body>
+<script src="main.js"></script>
+
+</html>
