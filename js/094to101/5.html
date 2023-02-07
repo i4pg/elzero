@@ -2,22 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <div>Element</div>
-    <span>Element</span>
-    <p>Element</p>
-    <article>Element</article>
-    <section>Element</section>
+  <div>Element</div>
+  <span>Element</span>
+  <p>Element</p>
+  <article>Element</article>
+  <section>Element</section>
 </body>
 <script>
-    document.addEventListener("click", (e) => {
-        e.target ? console.log(`This Is ${e.target.nodeName}`) : "" ;
-    });
+  //     document.addEventListener("click", (e) => {
+  //         e.target ? console.log(`This Is ${e.target.nodeName}`) : "" ;
+  //     });
+  children = Array.from(document.body.children)
+
+  children.forEach(element => {
+    element.addEventListener("click", (e) => {
+      console.log(`This is "${e.explicitOriginalTarget.localName}"`)
+    })
+  });
+
 </script>
+
 </html>
