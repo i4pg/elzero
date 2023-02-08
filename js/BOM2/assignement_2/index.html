@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elzero JS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="icon" type="image/x-icon"
+    href="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_js_official_icon_130509.png">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Text input" title="name" value="Your Name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" placeholder="Text input" title="username" value="Elzero">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <p class="help is-success">This username is available</p>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right" title="email">
+          <input class="input is-danger" title="email" type="email" placeholder="Email input" value="Elzero@web.school">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <p class="help is-danger">This email is invalid</p>
+      </div>
+
+      <div class="field">
+        <label class="label">Language</label>
+        <div class="control">
+          <div class="select">
+            <select title="language">
+              <option>Ruby</option>
+              <option>Python</option>
+              <option>Javascript</option>
+              <option>Rust</option>
+              <option>php</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link">Submit</button>
+        </div>
+        <div class="control">
+          <button class="button is-link is-light">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script/main.js"></script>
+</body>
+
+</html>
