@@ -1,4 +1,4 @@
-let chosen = 1;
+let chosen = 3;
 
 let myFriends = [
   { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
@@ -7,8 +7,20 @@ let myFriends = [
 ];
 
 // Write Your Code Here
-let friend = myFriends[chosen - 1]
-const { title, age, available, skills: [, skill] } = friend
+function friend() {
+  const [a, b, c] = myFriends
+
+  switch (chosen) {
+    case 1:
+      return a
+    case 2:
+      return b
+    case 3:
+      return c
+  }
+}
+
+const { title, age, available, skills: [, skill] } = friend()
 
 console.log(title)
 console.log(age)
