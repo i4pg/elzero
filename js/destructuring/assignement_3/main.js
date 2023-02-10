@@ -4,7 +4,8 @@ let arr3 = ["Haytham", "Shady", "Mahmoud"];
 
 // Play With Arrays To Prepare For Destructuring
 // Write Your Destructuring Assignment Here
-let [, a, b] = arr3, [c] = arr1
+
+let [[, a, b], [c]] = [arr3, arr1]
 
 console.log(`My Best Friends: ${a}, ${b}, ${c}`);
 
