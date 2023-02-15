@@ -1,5 +1,4 @@
 const birthday = new Date("Nov 23 1996")
-
 let today = Date.now()
 let milliseconds = today - birthday
 let seconds = milliseconds / 1000
