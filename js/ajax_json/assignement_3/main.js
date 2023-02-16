@@ -1,9 +1,9 @@
 let req = new XMLHttpRequest();
 req.open("GET", "https://api.npoint.io/cd80e157ee21c29e4744")
 req.send()
-setTimeout(() => {
-  if (req.readyState === 4 && req.status === 200) {
-    mainData = JSON.parse(req.response)
+req.onreadystatechange = function() {
+  if (this.readyState === 4 && this.status === 200) {
+    mainData = JSON.parse(this.response)
     mainData.forEach(article => {
       article.category = 'All'
     });
@@ -11,7 +11,7 @@ setTimeout(() => {
     console.log("JSON Object Content Here")
     console.log(JSON.stringify(mainData))
   }
-}, 500);
+}
 
 // mainData Variable Content
 

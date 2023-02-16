@@ -1,8 +1,8 @@
 let req = new XMLHttpRequest();
 req.open("GET", "https://api.npoint.io/cd80e157ee21c29e4744")
 req.send()
-setTimeout(() => {
-  if (req.readyState === 4 && req.status === 200) {
+req.onreadystatechange = function() {
+  if (this.readyState === 4 && this.status === 200) {
     let mainData = JSON.parse(req.response)
     let container = document.createElement("div")
     container.id = "data"
@@ -26,4 +26,4 @@ setTimeout(() => {
     });
     document.body.append(container)
   }
-}, 1000);
+}
